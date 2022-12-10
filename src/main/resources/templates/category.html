@@ -54,7 +54,7 @@
 
             </div>
             <nav class="navbar navbar-expand-lg">
-                <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
+                <div class="container"><a href="index.html" class="navbar-brand home"><img th:src="@{/img/logo.png}" alt="Obaju logo" class="d-none d-md-inline-block"><img th:src="@{/img/logo-small.png}" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
                     <div class="navbar-buttons">
                         <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
                         <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
@@ -153,8 +153,8 @@
                                                 </ul>
                                             </div>
                                             <div class="col-md-6 col-lg-3">
-                                                <div class="banner"><a href="#"><img src="img/banner.jpg" alt="" class="img img-fluid"></a></div>
-                                                <div class="banner"><a href="#"><img src="img/banner2.jpg" alt="" class="img img-fluid"></a></div>
+                                                <div class="banner"><a href="#"><img th:src="@{/img/banner.jpg}" alt="" class="img img-fluid"></a></div>
+                                                <div class="banner"><a href="#"><img th:src="@{/img/banner2.jpg}" alt="" class="img img-fluid"></a></div>
                                             </div>
                                         </div>
                                     </li>
@@ -247,31 +247,13 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="nav nav-pills flex-column category-menu">
-                                        <li><a href="category.html" class="nav-link">Men <span class="badge badge-secondary">42</span></a>
-                                            <ul class="list-unstyled">
-                                                <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                                                <li><a href="category.html" class="nav-link">Shirts</a></li>
-                                                <li><a href="category.html" class="nav-link">Pants</a></li>
-                                                <li><a href="category.html" class="nav-link">Accessories</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="category.html" class="nav-link active">Ladies  <span class="badge badge-light">123</span></a>
-                                            <ul class="list-unstyled">
-                                                <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                                                <li><a href="category.html" class="nav-link">Skirts</a></li>
-                                                <li><a href="category.html" class="nav-link">Pants</a></li>
-                                                <li><a href="category.html" class="nav-link">Accessories</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="category.html" class="nav-link">Kids  <span class="badge badge-secondary">11</span></a>
-                                            <ul class="list-unstyled">
-                                                <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                                                <li><a href="category.html" class="nav-link">Skirts</a></li>
-                                                <li><a href="category.html" class="nav-link">Pants</a></li>
-                                                <li><a href="category.html" class="nav-link">Accessories</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                  <li>
+                    <a th:href="@{/}">All</a>
+                  </li>
+                  <li th:each ="row : ${straps}">
+                    <a th:href="@{/category/{strapId}(strapId=${row.StrapID})}" th:text="${row.StrapName}" class="nav-link"><span class="badge badge-secondary"></span></a>
+                  </li>
+                </ul>
                                 </div>
                             </div>
                             <div class="card sidebar-menu mb-4">
@@ -344,7 +326,7 @@
                                 </div>
                             </div>
                             <!-- *** MENUS AND FILTERS END ***-->
-                            <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div>
+                            <div class="banner"><a href="#"><img th:src="@{/img/banner.jpg}" alt="sales 2014" class="img-fluid"></a></div>
                         </div>
                         <div class="col-lg-9">
                             <div class="box info-bar">
@@ -365,14 +347,14 @@
                                 </div>
                             </div>
                             <div class="row products">
-                                <div th:each ="row, state: ${data}" class="col-lg-4 col-md-6">
+                                <div th:each ="row : ${data}" class="col-lg-4 col-md-6">
                                     <div class="product">
                                         <div class="flip-container">
                                             <div class="flipper">
                                                 <div class="front"><a href="detail.html"><img th:src="@{/img/product/{image}(image=${row.Image})}" alt="" class="img-fluid"></a></div>
                                                 <div class="back"><a href="detail.html"><img th:src="@{/img/product/{image}(image=${row.Image})}" alt="" class="img-fluid"></a></div>
                                             </div>
-                                        </div><a href="detail.html" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                                        </div><a href="detail.html" class="invisible"><img th:src="@{/img/product1.jpg}" alt="" class="img-fluid"></a>
                                         <div class="text">
                                             <h3><a th:text="${row.ProductName}" href="detail.html">Product name</a></h3>
                                             <p class="price"> 
@@ -424,12 +406,8 @@
             </div>
         </div>
         <!-- *** COPYRIGHT END ***-->
-        <!-- JavaScript files-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-        <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-        <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-        <script src="js/front.js"></script>
-    </body>
+    <th:block th:insert="~{script :: script}">
+
+    </th:block>
+</body>
 </html>

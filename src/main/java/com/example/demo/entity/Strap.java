@@ -5,7 +5,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import java.util.Set;
+import java.util.List;
 import lombok.Data;
 
 /**
@@ -25,5 +25,5 @@ public class Strap {
     private String StrapName;
 
     @OneToMany(mappedBy="strap")
-    private Set<Product> products;
+    private List<Product> products;
 }

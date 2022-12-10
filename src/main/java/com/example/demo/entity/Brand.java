@@ -5,7 +5,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import java.util.Set;
+import java.util.List;
 import lombok.Data;
 
 /**
@@ -24,5 +24,5 @@ public class Brand {
     private String BrandName;
     
     @OneToMany(mappedBy="brand")
-    private Set<Product> products;
+    private List<Product> products;
 }
