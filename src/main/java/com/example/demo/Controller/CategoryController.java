@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -28,8 +29,8 @@ public class CategoryController {
     private StrapServiceImpl strapService;
 
     @GetMapping("/")
-    public String homepage(Model m) {
-        Iterable<Product> list = productService.findAll();
+    public String homepage(Model m, @RequestParam(name="keyword", required=false) String keyword) {
+        Iterable<Product> list = productService.findAll(keyword);
         Iterable<Strap> straps = strapService.findAll();
         m.addAttribute("data", list);
         m.addAttribute("straps", straps);

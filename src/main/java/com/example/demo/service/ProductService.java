@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ProductService {
     @Autowired
-    Iterable<Product> findAll();
+    Iterable<Product> findAll(String keyword);
     List<Product> search(String term);
     List<Product> getByStrapId(int strapId);
 }

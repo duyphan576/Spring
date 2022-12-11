@@ -16,16 +16,21 @@ import org.springframework.stereotype.Service;
  * @author ACER NITRO 5
  */
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepositpry productRepositpry;
-    
+
     @Autowired
     private StrapRepositpry strapRepository;
-    
+
     @Override
-    public Iterable<Product> findAll() {
+    public Iterable<Product> findAll(String keyword) {
+        System.out.println(keyword);
+        if (keyword != null) {
+            System.out.println(keyword);
+            return productRepositpry.findByNameOrStrap(keyword);
+        }
         return productRepositpry.findAll();
     }
 
@@ -36,7 +41,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> getByStrapId(int strapId) {
-       return strapRepository.findById(strapId).get().getProducts();
+        return strapRepository.findById(strapId).get().getProducts();
     }
-    
+
 }
