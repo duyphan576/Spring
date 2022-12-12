@@ -26,7 +26,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Iterable<Product> findAll(String keyword) {
-        System.out.println(keyword);
         if (keyword != null) {
             System.out.println(keyword);
             return productRepositpry.findByNameOrStrap(keyword);
@@ -35,13 +34,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> search(String term) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Product getProductByID(int id) {
+        return productRepositpry.findById(id).get();
     }
 
     @Override
     public List<Product> getByStrapId(int strapId) {
         return strapRepository.findById(strapId).get().getProducts();
     }
-
 }

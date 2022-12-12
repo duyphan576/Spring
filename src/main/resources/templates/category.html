@@ -6,7 +6,7 @@
     <body>
         <!-- navbar-->
         <header th:insert="~{navbar :: navbar}">
-            
+
         </header>
         <div id="all">
             <div id="content">
@@ -23,13 +23,13 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="nav nav-pills flex-column category-menu">
-                  <li>
-                    <a th:href="@{/}">All</a>
-                  </li>
-                  <li th:each ="row : ${straps}">
-                    <a th:href="@{/category/{strapId}(strapId=${row.StrapID})}" th:text="${row.StrapName}" class="nav-link"><span class="badge badge-secondary"></span></a>
-                  </li>
-                </ul>
+                                        <li>
+                                            <a th:href="@{/}">All</a>
+                                        </li>
+                                        <li th:each ="row : ${straps}">
+                                            <a th:href="@{/category/{strapId}(strapId=${row.StrapID})}" th:text="${row.StrapName}" class="nav-link"><span class="badge badge-secondary"></span></a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="card sidebar-menu mb-4">
@@ -136,7 +136,10 @@
                                             <p class="price"> 
                                                 <del></del><th:block th:text="${#numbers.formatCurrency(row.Price)}">Price</th:block>
                                             </p>
-                                            <p class="buttons"><a href="detail.html" class="btn btn-outline-secondary">View detail</a><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a></p>
+                                            <p class="buttons">
+                                                <a href="#" class="btn btn-outline-secondary">View detail</a>
+                                                <a th:href="@{cart/add/{productId} (productId = ${row.ProductID})}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </p>
                                         </div>
                                         <!-- /.text-->
                                     </div>

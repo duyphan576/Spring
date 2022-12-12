@@ -6,7 +6,6 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Product;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,8 +14,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface ProductService {
-    @Autowired
+
     Iterable<Product> findAll(String keyword);
-    List<Product> search(String term);
+    
+    Product getProductByID(int id);
+
     List<Product> getByStrapId(int strapId);
 }
