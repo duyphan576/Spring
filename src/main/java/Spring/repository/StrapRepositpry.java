@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.demo.repository;
+package Spring.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import com.example.demo.entity.Strap;
+import Spring.entity.Strap;
 
 /**
  *

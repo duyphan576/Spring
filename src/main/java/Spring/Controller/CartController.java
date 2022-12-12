@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.demo.Controller;
+package Spring.Controller;
 
-import com.example.demo.entity.CartItem;
-import com.example.demo.entity.Product;
-import com.example.demo.service.ProductServiceImpl;
+import Spring.entity.CartItem;
+import Spring.entity.Product;
+import Spring.service.ProductServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;

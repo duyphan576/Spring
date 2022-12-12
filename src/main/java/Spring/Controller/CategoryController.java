@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.demo.Controller;
+package Spring.Controller;
 
-import com.example.demo.entity.Product;
-import com.example.demo.entity.Strap;
-import com.example.demo.service.ProductServiceImpl;
-import com.example.demo.service.StrapServiceImpl;
+import Spring.entity.Product;
+import Spring.entity.Strap;
+import Spring.service.ProductServiceImpl;
+import Spring.service.StrapServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
