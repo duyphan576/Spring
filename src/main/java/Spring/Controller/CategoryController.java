@@ -4,10 +4,10 @@
  */
 package Spring.Controller;
 
-import Spring.entity.Product;
-import Spring.entity.Strap;
-import Spring.service.ProductServiceImpl;
-import Spring.service.StrapServiceImpl;
+import Spring.Entity.Product;
+import Spring.Entity.Strap;
+import Spring.Service.ProductServiceImpl;
+import Spring.Service.StrapServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

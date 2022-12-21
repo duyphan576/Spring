@@ -4,9 +4,9 @@
  */
 package Spring.Controller;
 
-import Spring.entity.CartItem;
-import Spring.entity.Product;
-import Spring.service.ProductServiceImpl;
+import Spring.Entity.CartItem;
+import Spring.Entity.Product;
+import Spring.Service.ProductServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
