@@ -5,7 +5,9 @@
 package Spring.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import org.hibernate.annotations.NotFound;
 
 /**
  *
@@ -20,24 +22,19 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int CustomerID;
 
+    @Column(name = "Username")
+    @NotBlank(message = "Username cannot be empty.")
+    private String username;
+
     @Column
-    private String Account;
-    
-    @Column
+    @NotBlank(message = "Password cannot be empty.")
     private String Password;
 
     @Column
+    @NotBlank(message = "Full name cannot be empty.")
     private String FullName;
 
     @Column
+    @NotBlank(message = "Address cannot be empty.")
     private String Address;
-    
-    public int getCustomerID() {
-        return this.CustomerID;
-    }
-
-    @Override
-    public String toString() {
-        return this.CustomerID + " - " + this.FullName;
-    }
 }
