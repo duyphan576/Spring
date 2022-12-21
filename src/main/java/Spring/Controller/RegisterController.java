@@ -4,8 +4,8 @@
  */
 package Spring.Controller;
 
-import Spring.entity.Customer;
-import Spring.service.CustomerServiceImple;
+import Spring.Entity.Customer;
+import Spring.Service.CustomerServiceImple;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
