@@ -7,7 +7,6 @@ package Spring.Entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import org.hibernate.annotations.NotFound;
 
 /**
  *

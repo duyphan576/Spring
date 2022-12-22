@@ -4,8 +4,9 @@
  */
 package Spring.Controller;
 
-import Spring.entity.Customer;
-import Spring.service.CustomerServiceImple;
+
+import Spring.Entity.Customer;
+import Spring.service.CustomerServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RegisterController {
     
     @Autowired
-    private CustomerServiceImple customerService;
+    private CustomerServiceImpl customerService;
     
     @GetMapping("/register")
     public String showRegister(Model m) {

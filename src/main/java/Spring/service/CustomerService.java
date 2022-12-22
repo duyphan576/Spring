@@ -4,7 +4,7 @@
  */
 package Spring.service;
 
-import Spring.entity.Customer;
+import Spring.Entity.Customer;
 import org.springframework.stereotype.Service;
 
 /**

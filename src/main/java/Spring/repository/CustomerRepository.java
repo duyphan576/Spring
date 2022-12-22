@@ -4,7 +4,7 @@
  */
 package Spring.repository;
 
-import Spring.entity.Customer;
+import Spring.Entity.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 /**

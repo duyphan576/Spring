@@ -4,7 +4,7 @@
  */
 package Spring.service;
 
-import Spring.entity.Customer;
+import Spring.Entity.Customer;
 import Spring.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author ACER NITRO 5
  */
 @Service
-public class CustomerServiceImple implements CustomerService {
+public class CustomerServiceImpl implements CustomerService {
     
     @Autowired
     private CustomerRepository customerRepository;
