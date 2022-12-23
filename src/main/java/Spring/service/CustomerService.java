@@ -15,4 +15,6 @@ import org.springframework.stereotype.Service;
 public interface CustomerService {
     
     public Customer registerCustomer(Customer customer);
+    
+    public boolean checkLogin(String username, String password);
 }

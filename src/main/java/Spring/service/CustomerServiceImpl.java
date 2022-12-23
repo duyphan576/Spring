@@ -6,8 +6,10 @@ package Spring.Service;
 
 import Spring.Entity.Customer;
 import Spring.Repository.CustomerRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 /**
  *
@@ -32,6 +34,16 @@ public class CustomerServiceImpl implements CustomerService {
         newCustomer.setAddress(customer.getAddress());
         
         return customerRepository.save(newCustomer);
+    }
+
+    @Override
+    public boolean checkLogin(String username, String password) {
+        Customer c = customerRepository.findByUsername(username);
+        if(c != null && c.getPassword().equals(password)){
+            
+            return true;
+        }
+        return false;
     }
     
 }
