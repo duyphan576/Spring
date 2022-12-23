@@ -4,7 +4,6 @@
  */
 package Spring.Entity;
 
-import java.sql.Date;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,9 +21,6 @@ public class OrderDetail {
     private int OrderDetailID;
 
     @Column
-    private int ProductID;
-
-    @Column
     private int Quantity;
 
     @Column
@@ -34,7 +30,8 @@ public class OrderDetail {
     @JoinColumn(name = "OrderID")
     private Order orderID;
 
-    /*@OneToOne
-    @JoinColumn(name="ProductID")
-    private Product ProductID;*/
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "ProductID")
+    private Product product;
 }

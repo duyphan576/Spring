@@ -24,12 +24,12 @@ public class CategoryController {
 
     @Autowired
     private ProductServiceImpl productService;
-    
+
     @Autowired
     private StrapServiceImpl strapService;
 
     @GetMapping("/")
-    public String homepage(Model m, @RequestParam(name="keyword", required=false) String keyword) {
+    public String getProduct(Model m, @RequestParam(name = "keyword", required = false) String keyword) {
         Iterable<Product> list = productService.findAll(keyword);
         Iterable<Strap> straps = strapService.findAll();
         m.addAttribute("data", list);
@@ -40,6 +40,15 @@ public class CategoryController {
     @GetMapping("/category/{strapId}")
     public String getProductByStrap(Model m, @PathVariable("strapId") int strapId) {
         Iterable<Product> list = productService.getByStrapId(strapId);
+        Iterable<Strap> straps = strapService.findAll();
+        m.addAttribute("data", list);
+        m.addAttribute("straps", straps);
+        return "category";
+    }
+
+    @GetMapping("/best-selling")
+    public String sortBProduct(Model m) {
+        Iterable<Product> list = productService.sortBestSellingProduct();
         Iterable<Strap> straps = strapService.findAll();
         m.addAttribute("data", list);
         m.addAttribute("straps", straps);

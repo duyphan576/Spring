@@ -20,4 +20,6 @@ public interface ProductService {
     Product getProductByID(int id);
 
     List<Product> getByStrapId(int strapId);
+    
+    List<Product> sortBestSellingProduct();
 }

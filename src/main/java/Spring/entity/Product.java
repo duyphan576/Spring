@@ -33,9 +33,6 @@ public class Product {
     @Column
     private int Quantity;
 
-//    @Column
-//    private String ProductDetail;
-
     @ManyToOne
     @JoinColumn(name = "StrapID")
     private Strap strap;
@@ -43,4 +40,8 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "BrandID")
     private Brand brand;
+    
+    @OneToOne(mappedBy = "product", fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
+    private OrderDetail orderDetail;
 }

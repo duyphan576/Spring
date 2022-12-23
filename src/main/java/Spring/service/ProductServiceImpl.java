@@ -42,4 +42,11 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getByStrapId(int strapId) {
         return strapRepository.findById(strapId).get().getProducts();
     }
+
+    @Override
+    public List<Product> sortBestSellingProduct() {
+        return productRepositpry.sortBestSellingProduct();
+    }
+    
+    
 }

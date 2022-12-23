@@ -23,9 +23,6 @@ public class Order {
     private int OrderID;
 
     @Column
-    private int UserID;
-
-    @Column
     private int CustomerID;
 
     @Column
