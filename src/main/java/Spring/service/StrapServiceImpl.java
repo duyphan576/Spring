@@ -4,9 +4,7 @@
  */
 package Spring.Service;
 
-import Spring.Entity.Product;
 import Spring.Entity.Strap;
-import Spring.Repository.ProductRepositpry;
 import Spring.Repository.StrapRepositpry;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
