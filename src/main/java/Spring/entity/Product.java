@@ -41,7 +41,7 @@ public class Product {
     @JoinColumn(name = "BrandID")
     private Brand brand;
     
-    @OneToOne(mappedBy = "product", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "product")
     @PrimaryKeyJoinColumn
     private OrderDetail orderDetail;
 }

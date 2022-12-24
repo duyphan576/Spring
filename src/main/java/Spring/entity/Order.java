@@ -22,11 +22,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int OrderID;
 
-    @Column
-    private int CustomerID;
-
-    @Column
-    private int TotalQuantity;
+    @Column(name="CustomerID")
+    private int customerId;
 
     @Column
     private float TotalPrice;
@@ -34,9 +31,6 @@ public class Order {
     @Column
     private Date Date;
 
-    @Column
-    private int Status;
-
-    @OneToMany(mappedBy = "orderID")
+    @OneToMany(mappedBy = "orderID", cascade = CascadeType.ALL)
     private List<OrderDetail> listOrderDetail;
 }

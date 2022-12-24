@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package Spring.Service;
+package Spring.service;
 
-import Spring.Entity.Customer;
+import Spring.Entity.Order;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,11 +13,9 @@ import org.springframework.stereotype.Service;
  * @author ACER NITRO 5
  */
 @Service
-public interface CustomerService {
-    
-    public Customer registerCustomer(Customer customer);
-    
-    public boolean checkLogin(String username, String password);
-    
-    public Customer getUserInfo(String username);
+public interface OrderService {
+
+    public Order saveOrder(Order order);
+
+    public List<Order> getOrderByUserId(int userId);
 }

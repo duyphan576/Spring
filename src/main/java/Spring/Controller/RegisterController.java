@@ -44,12 +44,18 @@ public class RegisterController {
         return "redirect:/";
     }
     
-    @PostMapping("/")
+    @PostMapping("/login")
     public String checkLogin(ModelMap model, @RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
         if (customerService.checkLogin(username, password)) {
-            session.setAttribute("USERNAME", username);
-            return "category";
+            session.setAttribute("user", username);
+            return "redirect:/";
         }
-        return "register";
+        return "redirect:/register";
+    }
+    
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("user");
+        return "redirect:/";
     }
 }

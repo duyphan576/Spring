@@ -5,7 +5,9 @@
 package Spring.Controller;
 
 import Spring.Entity.CartItem;
+import Spring.Entity.Customer;
 import Spring.Entity.Product;
+import Spring.Service.CustomerServiceImpl;
 import Spring.Service.ProductServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -27,12 +29,19 @@ public class CartController {
 
     @Autowired
     ProductServiceImpl productService;
+    
+    @Autowired
+    CustomerServiceImpl customerService;
 
     @GetMapping("/cart")
     public String showCart(Model m, HttpSession session) {
         List<CartItem> cart = (List<CartItem>) session.getAttribute("cart");
         m.addAttribute("data", cart);
         m.addAttribute("total", getTotal(session));
+        if(session.getAttribute("user") != null) {
+            Customer customer = customerService.getUserInfo(session.getAttribute("user").toString());
+            m.addAttribute("user", customer);
+        }
         return "basket";
     }
 

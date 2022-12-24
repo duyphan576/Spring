@@ -25,7 +25,7 @@ public class OrderDetail {
 
     @Column
     private float Price;
-
+    
     @ManyToOne
     @JoinColumn(name = "OrderID")
     private Order orderID;
